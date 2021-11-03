@@ -1,11 +1,16 @@
-const Item = ({id, username}) => {
+import React from "react";
+import ItemCount from './ItemCount';
+
+const Item = ({detail}) => {
     return (
         <div>
-            <h3>Soy el Item </h3>
-            <p>
-                Id = ${id}
-                User Name = ${username}
-            </p>
+            <div>
+                <img src={detail.pictureUrl} alt={detail.name} />
+            </div>
+            <h3> {detail.name} </h3>
+            <p> {detail.description} </p>
+            <p> {detail.price} </p>
+            <ItemCount stock={detail.stock} />
 
         </div>
     )
