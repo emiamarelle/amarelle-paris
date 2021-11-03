@@ -3,6 +3,12 @@ import ItemCount from './ItemCount';
 //import "./ItemDetail.scss";
 
 const ItemDetail = ({detail}) => {
+
+    const handleClick=(count) => {
+        // alert('La cantidad agregada es ${ counter }')
+        alert(`La cantidad agregada es ${ count }`)
+     }
+
   return (
     <>
       <div className="detail-img">
@@ -17,7 +23,7 @@ const ItemDetail = ({detail}) => {
         </div>
         <div>
           <span className="price">${detail.price}</span>
-          <ItemCount stock={detail.stock} />
+          <ItemCount stock={detail.stock} onAdd={handleClick} />
         </div>
       </div>
     </>
